@@ -1,7 +1,7 @@
 import { firebase } from '../firebase';
-// import { actions as formActions } from '@store/formItemReducer';
 
 export const signInWithEmailAndPassword = (email, password) => {
+  console.log(email, password);
   return async (dispatch) => {
     try {
       const userCredential = await firebase.auth().signInWithEmailAndPassword(email, password);
@@ -21,7 +21,6 @@ export const createUserWithEmailAndPassword = (email, password, name) => {
   return async (dispatch) => {
     try {
       const userRef = await firebase.auth().createUserWithEmailAndPassword(email, password);
-
       await userRef.user.updateProfile({
         displayName: name,
       });

@@ -1,26 +1,13 @@
 import React, { useState, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { SafeAreaView, View, TextInput, TouchableOpacity, Text } from 'react-native';
-import PagerView from 'react-native-pager-view';
 import { createUserWithEmailAndPassword } from '../store/actions';
 
-const CreateAccount = ({ navigation }) => {
+const CreateAccount = () => {
   const dispatch = useDispatch();
-  const pagerRef = useRef(null);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [currentPage, setCurrentPage] = useState(0);
-
-  const toEmail = () => {
-    if (!name) return;
-    changePage(1);
-  };
-
-  const toPassword = () => {
-    if (!email) return;
-    changePage(2);
-  };
 
   const createAccount = async () => {
     if (!password) return;
