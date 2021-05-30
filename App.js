@@ -11,7 +11,7 @@ export default function App() {
     <Provider store={theStore}>
       <View style={styles.container}>
         <StatusBar style="auto" />
-        {/* <Login></Login> */}
+        <Login></Login>
         <CreateAccount></CreateAccount>
       </View>
     </Provider>
