@@ -20,10 +20,14 @@ export const signInWithEmailAndPassword = (email, password) => {
 export const createUserWithEmailAndPassword = (email, password, name) => {
   return async (dispatch) => {
     try {
-      const userRef = await firebase.auth().createUserWithEmailAndPassword(email, password);
-      await userRef.user.updateProfile({
-        displayName: name,
-      });
+      const user = await firebase.auth().createUserWithEmailAndPassword(email, password);
+
+      if (user) {
+        await firebase.firestore().collection('users').doc(user.user.uid).set({
+          name: name,
+          created: new Date(),
+        });
+      }
 
       await signInWithEmailAndPassword(email, password);
     } catch (error) {
