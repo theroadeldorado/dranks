@@ -1,14 +1,13 @@
-import * as React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import React from 'react';
+import { View, Text } from 'react-native';
+import * as Svg from 'react-native-svg';
 
-const styles = StyleSheet.create({});
-
-export class DrinkCard extends React.Component {
-  render() {
-    return (
-      <View>
-        <Text>Dink</Text>
-      </View>
-    );
-  }
+function DrinkCard(props) {
+  return (
+    <View>
+      <Text>Drink</Text>
+    </View>
+  );
 }
+
+export default DrinkCard;

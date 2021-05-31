@@ -5,14 +5,16 @@ import Login from './components/Login';
 import { Provider, useDispatch, useSelector } from 'react-redux';
 import theStore from './store/store';
 import CreateAccount from './components/CreateAccount';
+import DrinkCard from './components/DrinkCard';
 
 export default function App() {
   return (
     <Provider store={theStore}>
       <View style={styles.container}>
         <StatusBar style="auto" />
-        <Login></Login>
-        <CreateAccount></CreateAccount>
+        {/* <Login></Login>
+        <CreateAccount></CreateAccount> */}
+        <DrinkCard></DrinkCard>
       </View>
     </Provider>
   );
